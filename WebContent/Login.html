@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>販売支援システム|ログイン</title>
+
+<script type="text/javascript">
+	function PushLoginButton() {
+		empNo = document.inform.EMP_NO.value;
+		password = document.inform.PASSWORD.value;
+		if (empNo == "" || password == "") {
+			alert("Noまたは、Passwordが未入力です。");
+			return false;
+		}
+		document.inform.BUTTON_ID.value = 'UC101';
+		document.inform.submit();
+	}
+</script>
+</head>
+<body>
+	<div style="text-align: center; margin-right: auto; margin-left: auto;">
+		<form action="/jsys/jsys" method="post" name="inform">
+			<input type="hidden" name="BUTTON_ID" value="">
+			<div
+				style="text-align: center; margin-left: auto; margin-right: auto;">
+				<table style="margin-left: auto; margin-right: auto;">
+					<tr>
+						<td nowrap>No.</td>
+						<td nowrap><input type="text" name="EMP_NO" maxlength="6"></td>
+					</tr>
+					<tr>
+						<td nowrap>Password.</td>
+						<td nowrap><input type="password" name="PASSWORD"
+							maxlength="6"></td>
+					</tr>
+				</table>
+				<input type="button" onclick="return PushLoginButton()" value="ログイン">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
