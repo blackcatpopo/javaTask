@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ï»¿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>”Ì”„x‰‡ƒVƒXƒeƒ€</title>
+<title>è²©å£²æ”¯æ´ã‚·ã‚¹ãƒ†ãƒ </title>
 <script type="text/javascript">
 	function ClearFormAll() {
 		document.getElementsByName("RADIO_TYPE").checked = false;
@@ -18,58 +18,59 @@
 	}
 
 	function TextDisable() {
-		radiotype = document.inform.RADIO_TYPE.value; //ƒ‰ƒWƒIƒ{ƒ^ƒ“‚Ìvalue’l
-		name = document.inform.CUST_NAME.value;
-		telno = document.inform.CUST_TELNO.value;
-		postal = document.inform.CUST_POSTAL.value;
-		address = document.inform.CUST_ADDRESS.value;
+		var form = document.inform;
+		radiotype = document.inform.RADIO_TYPE.value; //ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®valueå€¤
+		name = form.CUST_NAME.value;
+		telno = form.CUST_TELNO.value;
+		postal = form.CUST_POSTAL.value;
+		address = form.CUST_ADDRESS.value;
 		if (radiotype == 1) {
-			document.inform.CUST_NAME.disabled = false;
-			document.inform.CUST_TELNO.disabled = false;
-			document.inform.CUST_POSTAL.disabled = false;
-			document.inform.CUST_ADDRESS.disabled = false;
+			form.CUST_NAME.disabled = false;
+			form.CUST_TELNO.disabled = false;
+			form.CUST_POSTAL.disabled = false;
+			form.CUST_ADDRESS.disabled = false;
 			return true;
 		} else if (radiotype == 2
 				&& (name == "" || telno == "" || postal == "" || address == "")) {
-			document.inform.CUST_NAME.disabled = true;
-			document.inform.CUST_TELNO.disabled = true;
-			document.inform.CUST_POSTAL.disabled = true;
-			document.inform.CUST_ADDRESS.disabled = true;
+			form.CUST_NAME.disabled = true;
+			form.CUST_TELNO.disabled = true;
+			form.CUST_POSTAL.disabled = true;
+			form.CUST_ADDRESS.disabled = true;
 			return true;
 		} else if (radiotype == 2 && name != "" && telno != "" && postal != ""
 				&& address != "") {
-			document.inform.CUST_NAME.disabled = false;
-			document.inform.CUST_TELNO.disabled = false;
-			document.inform.CUST_POSTAL.disabled = false;
-			document.inform.CUST_ADDRESS.disabled = false;
+			form.CUST_NAME.disabled = false;
+			form.CUST_TELNO.disabled = false;
+			form.CUST_POSTAL.disabled = false;
+			form.CUST_ADDRESS.disabled = false;
 			return true;
 		} else if (radiotype == 3) {
-			document.inform.CUST_NAME.disabled = true;
-			document.inform.CUST_TELNO.disabled = true;
-			document.inform.CUST_POSTAL.disabled = true;
-			document.inform.CUST_ADDRESS.disabled = true;
+			form.CUST_NAME.disabled = true;
+			form.CUST_TELNO.disabled = true;
+			form.CUST_POSTAL.disabled = true;
+			form.CUST_ADDRESS.disabled = true;
 			return true;
 		}
 	}
 	function PushSearchButton() {
-		custCode = document.inform.CUST_CODE.value; //“¾ˆÓæƒR[ƒh
+		custCode = document.inform.CUST_CODE.value; //å¾—æ„å…ˆã‚³ãƒ¼ãƒ‰
 		if (custCode == "") {
-			alert("“¾ˆÓæƒR[ƒh‚ª–¢“ü—Í‚Å‚·");
+			alert("å¾—æ„å…ˆã‚³ãƒ¼ãƒ‰ãŒæœªå…¥åŠ›ã§ã™");
 			return false;
 		}
 		document.inform.BUTTON_ID.value = 'UC000_01_03';
 		document.inform.submit();
 	}
 	function PushUpdateButton() {
-		custCode = document.inform.CUST_CODE.value; //“¾ˆÓæƒR[ƒh
-		radiotype = document.inform.RADIO_TYPE.value; //ƒ‰ƒWƒIƒ{ƒ^ƒ“‚Ìvalue’l
+		custCode = document.inform.CUST_CODE.value; //å¾—æ„å…ˆã‚³ãƒ¼ãƒ‰
+		radiotype = document.inform.RADIO_TYPE.value; //ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®valueå€¤
 		if (custCode == "") {
-			alert("“¾ˆÓæƒR[ƒh‚ª–¢“ü—Í‚Å‚·");
+			alert("å¾—æ„å…ˆã‚³ãƒ¼ãƒ‰ãŒæœªå…¥åŠ›ã§ã™");
 			return false;
 		}
 		if (radiotype == 0) {
-			//“o˜^/•ÏX/íœ‚É–¢‘I‘ğó‘Ô
-			alert("“o˜^/•ÏX/íœ‚Ì‚¢‚¸‚ê‚©‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢");
+			//ç™»éŒ²/å¤‰æ›´/å‰Šé™¤æ™‚ã«æœªé¸æŠçŠ¶æ…‹
+			alert("ç™»éŒ²/å¤‰æ›´/å‰Šé™¤ã®ã„ãšã‚Œã‹ã‚’é¸æŠã—ã¦ãã ã•ã„");
 			return false;
 		}
 		if (radiotype == "1") {
@@ -77,7 +78,7 @@
 		} else if (radiotype == "2") {
 			document.inform.BUTTON_ID.value = 'UC000_01_05';
 		} else if (radiotype == "3") {
-			flg = confirm("íœ‚µ‚Ä‚à‚æ‚ë‚µ‚¢‚Å‚·‚©H");
+			flg = confirm("å‰Šé™¤ã—ã¦ã‚‚ã‚ˆã‚ã—ã„ã§ã™ã‹ï¼Ÿ");
 			if (flg == true) {
 				document.inform.BUTTON_ID.value = 'UC000_01_06';
 			} else {
@@ -91,7 +92,7 @@
 <body>
 	<%
 		System.out.println( "(AddCustomer.jsp)" );
-		//sessionScope‚ªnull‚È‚çƒƒOƒCƒ“‰æ–Ê‚ÖƒŠƒ_ƒCƒŒƒNƒg
+		//sessionScopeãŒnullãªã‚‰ãƒ­ã‚°ã‚¤ãƒ³ç”»é¢ã¸ãƒªãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆ
 		if ( session.getAttribute( "employee" ) == null || "".equals( session.getAttribute( "employee" ) ) ) {
 			String name = (String) session.getAttribute( "employee" );
 			System.out.println( "  sessionScope = " + name );
@@ -99,12 +100,12 @@
 		}
 	%>
 	<div style="text-align: right;">
-		‚æ‚¤‚±‚»
+		ã‚ˆã†ã“ã
 		<c:out value="${sessionScope.employee.empName }" />
-		‚³‚ñB <a href="/jsys/Logout.jsp">ƒƒOƒAƒEƒg</a>
+		ã•ã‚“ã€‚ <a href="/jsys/Logout.jsp">ãƒ­ã‚°ã‚¢ã‚¦ãƒˆ</a>
 	</div>
 	<%
-		//ƒ‰ƒWƒIƒ{ƒ^ƒ“‚Ìvalue’l‚ğæ“¾‚µAnull‚È‚ç1‚ğ‚¢‚ê‚Ä“o˜^‚ª•W€‚Åchecked‚È‚é‚æ‚¤‚É
+		//ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®valueå€¤ã‚’å–å¾—ã—ã€nullãªã‚‰1ã‚’ã„ã‚Œã¦ç™»éŒ²ãŒæ¨™æº–ã§checkedãªã‚‹ã‚ˆã†ã«
 		int radio = 0;
 		String name = "";
 		String str = (String) request.getAttribute( "radio" );
@@ -116,7 +117,7 @@
 		}
 	%>
 	<div style="text-align: center;">
-		<h2>“¾ˆÓæ “o˜^b•ÏXbíœ</h2>
+		<h2>å¾—æ„å…ˆ ç™»éŒ²ï½œå¤‰æ›´ï½œå‰Šé™¤</h2>
 	</div>
 	<div style="text-align: center; color: red;">
 		<c:out value="${requestScope.message}" />
@@ -125,14 +126,14 @@
 		<input type="hidden" name="BUTTON_ID" value="">
 		<div style="text-align: center;">
 			<label>
-				“o˜^
+				ç™»éŒ²
 				<input type="radio" name="RADIO_TYPE" value="1"
 					onclick="return TextDisable()"
 				>
 			</label>
 			|
 			<label>
-				•ÏX
+				å¤‰æ›´
 				<input type="radio" name="RADIO_TYPE" value="2"
 					<%if ( radio == 2 ) {
 				out.print( " checked" );
@@ -142,7 +143,7 @@
 			</label>
 			|
 			<label>
-				íœ
+				å‰Šé™¤
 				<input type="radio" name="RADIO_TYPE" value="3"
 					<%if ( radio == 3 ) {
 				out.print( " checked " );
@@ -153,7 +154,7 @@
 			<br />
 			<table style="margin-left: auto; margin-right: auto;">
 				<tr>
-					<td nowrap>“¾ˆÓæƒR[ƒh</td>
+					<td nowrap>å¾—æ„å…ˆã‚³ãƒ¼ãƒ‰</td>
 					<td nowrap>
 						<input type="text" name="CUST_CODE"
 							value="${requestScope.customer.custCode }" maxlength="6"
@@ -161,13 +162,13 @@
 						/>
 					</td>
 					<td>
-						<input type="button" value="ŒŸõ"
+						<input type="button" value="æ¤œç´¢"
 							onclick="return PushSearchButton()"
 						>
 					</td>
 				</tr>
 				<tr>
-					<td nowrap>“¾ˆÓæ–¼</td>
+					<td nowrap>å¾—æ„å…ˆå</td>
 					<td nowrap>
 						<input type="text" name="CUST_NAME"
 							value="${requestScope.customer.custName }" maxlength="6"
@@ -183,7 +184,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td nowrap>“d˜b”Ô†</td>
+					<td nowrap>é›»è©±ç•ªå·</td>
 					<td nowrap>
 						<input type="text" name="CUST_TELNO"
 							value="${requestScope.customer.telNo }" maxlength="12" size="10"
@@ -198,12 +199,12 @@
 					</td>
 				</tr>
 				<tr>
-					<td nowrap>—X•Ö”Ô†</td>
+					<td nowrap>éƒµä¾¿ç•ªå·</td>
 					<td nowrap>
 						<input type="text" name="CUST_POSTAL"
 							value="${requestScope.customer.postalCode }" maxlength="8"
 							size="10" pattern="\d{3}-\d{4}"
-							title="—X•Ö”Ô†‚ÍA3Œ…‚Ì”šAƒnƒCƒtƒ“i-jA4Œ…‚Ì”š‚Ì‡‚Å‹L“ü‚µ‚Ä‚­‚¾‚³‚¢B"
+							title="éƒµä¾¿ç•ªå·ã¯ã€3æ¡ã®æ•°å­—ã€ãƒã‚¤ãƒ•ãƒ³ï¼ˆ-ï¼‰ã€4æ¡ã®æ•°å­—ã®é †ã§è¨˜å…¥ã—ã¦ãã ã•ã„ã€‚"
 							<%
 							if ( request.getAttribute( "customer" ) !=  null && radio == 2) {
 								out.println("");
@@ -215,7 +216,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td nowrap>ZŠ</td>
+					<td nowrap>ä½æ‰€</td>
 					<td nowrap>
 						<input type="text" name="CUST_ADDRESS"
 							value="${requestScope.customer.address }" maxlength="40"
@@ -232,10 +233,10 @@
 				</tr>
 			</table>
 			<p>
-				<input type="button" value="Às" onClick="return PushUpdateButton()">
-				<input type="button" value="ƒNƒŠƒA" onClick="ClearFormAll()">
+				<input type="button" value="å®Ÿè¡Œ" onClick="return PushUpdateButton()">
+				<input type="button" value="ã‚¯ãƒªã‚¢" onClick="ClearFormAll()">
 			</p>
-			<input type="button" value="ƒƒjƒ…[‰æ–Ê‚É–ß‚é"
+			<input type="button" value="ãƒ¡ãƒ‹ãƒ¥ãƒ¼ç”»é¢ã«æˆ»ã‚‹"
 				onclick="this.form.BUTTON_ID.value='UC999_01'; this.form.submit();"
 			>
 		</div>
